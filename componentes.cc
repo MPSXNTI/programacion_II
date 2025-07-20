@@ -60,7 +60,7 @@ class Procesamiento : public Componente {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    virtual void mostrarEstado() const override {
+    virtual void mostrarEstado() override {
 
         Componente::mostrarEstado();
 
@@ -86,7 +86,7 @@ class Almacenamiento : public Componente {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    virtual void mostrarEstado() const override {
+    virtual void mostrarEstado() override {
 
         Componente::mostrarEstado();
 
@@ -140,7 +140,7 @@ class CPU : public Procesamiento {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    void mostrarEstado() const override {
+    void mostrarEstado() override {
 
         std::cout << "CPU - Numero de Procesador: " << numeroProcesador << ", Cache L3: " << cacheL3 << " MB" << std::endl;
 
@@ -189,7 +189,7 @@ class GPU : public Procesamiento {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    void mostrarEstado() const override {
+    void mostrarEstado() override {
 
         std::cout << "GPU - Ancho de Banda: " << memoria << " GB/s" << std::endl;
 
@@ -243,7 +243,7 @@ class HDD : public Almacenamiento {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    void mostrarEstado() const override {
+    void mostrarEstado() override {
 
         std::cout << "Velocidad de Rotacion: " << rpm << " rpm, Cache: " << memoriaCache << " MB" << std::endl;
 
@@ -294,7 +294,7 @@ class SSD : public Almacenamiento {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    void mostrarEstado() const override {
+    void mostrarEstado() override {
 
         std::cout << "Tipo de Memoria: " << tipoMemoria << std::endl;
 
@@ -337,7 +337,7 @@ class SSHD : public HDD, public SSD {
      * @brief Sobreescribe el metodo mostrar estado del componente.
      * 
      */
-    void mostrarEstado() const override {
+    void mostrarEstado() override {
 
         HDD::mostrarEstado();
         SSD::mostrarEstado();
